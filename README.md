@@ -35,6 +35,21 @@ The model was fetched and served from the ersilia model hub and ready to be used
 Comparing the model information with predictions the model generated, it can be inferred that the model is not biased from the visualisation above. The model was able generate that half of the dataset has poor solubility i.e almost equal percentage of the two classes
 
 
+# Task 2
+
+MODEL REPRODUCIBILITY
+The task is to identify a result I can reproduce from the publication of the ADME model I chose which is NCATS@ADME.
+The task is to reproduce the result of ADME@NCATS Solubility model as described by the author in this Publication. I will be worked on a subset of training data and is made available in the PubChem database. The experimental data associated with the compounds are open for public access. The dataset has 2532 records and the details can be found in [PubChem AID 1645848](https://pubchem.ncbi.nlm.nih.gov/bioassay/1645848) . I aim to reproduce this result- AUC-ROC: 0.93 +/– 0.00 from the 5 fold cross validation in [author publication](https://slas-discovery.org/article/S2472-5552(22)06765-X/fulltext#t2). The detailed notebook for implementation is found [here.](https://github.com/OlawumiSalaam/Ersilia_ModelValidation/blob/main/notebooks/GCNN_implement.ipynb)
+
+Also, The second task is to check that the author's model which is ADME@NCATS provides the same results when running via the Ersilia Model Hub(eos74bo) which was done by running predictions with a subset of NPC marketed drug that was downloaded from attached [supplemental material.](https://slas-discovery.org/article/S2472-5552(22)06765-X/fulltext#t2). A detailed notebook is found [here.](https://github.com/OlawumiSalaam/Ersilia_ModelValidation/blob/main/notebooks/Ersilia_Model_eos74bo.ipynb).
+To improve the quality of my contributions, I need to ensure the result is accurate and reliable. I ensured the data was cleaned to achieve data quality in this [notebook](https://github.com/OlawumiSalaam/Ersilia_ModelValidation/blob/main/notebooks_updated/eos74bo_validation_data_cleaning.ipynb) before reproducing the result.
+
+# Conclusion
+
+I was able to achieve the same result with the eos74bo model on Ersilia Model Hub and ADME@NCATS model by the author.
+
+
+
 
 
 
@@ -45,9 +60,10 @@ Comparing the model information with predictions the model generated, it can be 
 ## Repository organisation
 The repository is organised in folders:
 - '/notebooks' contains the jupyter notebooks where most of the work is being developed
-- '/data' contains all the .csv files. Model predictions are obtained outside this repository and saved in this folder. Subfolders might be created if needed
+- '/notebook_updated contains jupyter notebook for getting predictions on the author's model and eos74bo model with cleaned NPC data. It also contain jupyter notebook for cleaning the NPC data.
+- '/data' contains all the .csv files. Model predictions are obtained outside this repository and saved in this folder. Input folder has model_bias_input that contains csv data used for model bias checking(Week 2 Task 1) and csv files for model reproducibility are in eos74bo_author_validation subfolder(week2 Task 2). The output folder contains the corresponding subfolder for outputs in csv format. 
 - '/src' contains important functions I will re-use throughout the repository, to avoid typing them each time
-- '/figures' contains the plots I have produced during the model validation process
+- '/Plots' contains the plots I have produced during the model validation process
 - 'requirements.txt' lists all the required packages to run the notebooks in this repository. If possible I also specify the version of the package I am using.
 
 
